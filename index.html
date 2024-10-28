@@ -4,35 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
-    
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-    <!-- Toastify CSS and JS -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="frontend/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
-          <img src="https://www.svgrepo.com/show/530642/folder.svg" width="150" alt="Library Logo" />
+          <img
+            src="https://www.svgrepo.com/show/530642/folder.svg"
+            width="150"
+            alt="Library Logo"
+          />
         </a>
         <div class="navbar-collapse">
           <form id="searchForm" class="search-form" onsubmit="search(event)">
-            <select id="searchCategory" class="form-select" aria-label="Search category">
+            <select
+              id="searchCategory"
+              class="form-select"
+              aria-label="Search category"
+            >
               <option value="name">Name</option>
               <option value="authors">Authors</option>
               <option value="category">Category</option>
               <option value="year_published">Year of publish</option>
             </select>
-            <input id="searchKeyword" class="form-control me-2" type="search" placeholder="Search books, authors..." aria-label="Search" />
+            <input
+              id="searchKeyword"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search books, authors..."
+              aria-label="Search"
+            />
             <button class="btn btn-outline-dark" type="submit">Search</button>
           </form>
           <ul class="navbar-nav mx-auto">
@@ -46,10 +80,17 @@
             <button id="login" class="nav-link">Log In</button>
           </li>
           <li class="nav-item">
-            <a id="signUp" class="btn btn-primary" href="register.html">Sign Up</a>
+            <a id="signUp" class="btn btn-primary" href="register.html"
+              >Sign Up</a
+            >
           </li>
           <li class="nav-item">
-            <span class="menu-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span
+              class="menu-icon"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+            >
               &#9776;
             </span>
           </li>
@@ -60,27 +101,25 @@
     <!-- Offcanvas Menu -->
     <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a id="myBooksLink2" class="nav-link active text-white" href="#">My Books</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="admin.html">Admin</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="about.html">Contact Us</a>
-          </li>
-        </ul>
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a id="myBooksLink2" class="nav-link active text-white" href="#">My Books</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-white" href="admin.html">Admin</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-white" href="about.html">Contact Us</a>
+              </li>
+          </ul>
       </div>
-    </div>
+  </div>
 
     <div id="display" class="content-container"></div>
-    
-    <!-- Custom JavaScript -->
-    <script src="js/index.js"></script>
   </body>
+  <script src="js/index.js"></script>
 </html>
