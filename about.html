@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Page</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Toastify CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/forntend/css/style.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="https://www.svgrepo.com/show/530642/folder.svg"
+            width="150"
+            alt="Library Logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <form id="searchForm" class="search-form d-flex mx-auto" onsubmit="search(event)">
+            <select id="searchCategory" class="form-select me-2" aria-label="Search category">
+              <option value="name">Name</option>
+              <option value="authors">Authors</option>
+              <option value="category">Category</option>
+              <option value="year_published">Year of publish</option>
+            </select>
+            <input
+              id="searchKeyword"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search books, authors..."
+              aria-label="Search"
+            />
+            <button id="search" class="btn btn-outline-dark" type="submit">
+              Search
+            </button>
+          </form>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a id="myBooksLink" class="nav-link active" href="#">My Books</a>
+            </li>
+            <li class="nav-item">
+              <button id="login" class="nav-link">Log In</button>
+            </li>
+            <li class="nav-item">
+              <a id="signUp" class="btn btn-primary" href="register.html">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <span
+                class="menu-icon nav-link"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar"
+                >&#9776;</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a id="myBooksLink2" class="nav-link active text-white" href="#">My Books</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-white" href="admin.html">Admin</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-white" href="about.html">Contact Us</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+
+    <!-- Main Content -->
+    <div id="display" class="content-container mt-5 pt-5">
+      <section id="about-us">
+        <h2>About Our Library</h2>
+        <p>
+          Welcome to our library, a place where knowledge meets imagination. Our
+          library is dedicated to fostering a love for reading and providing a
+          wide range of resources for people of all ages.
+        </p>
+        <p>
+          We believe that books have the power to inspire, educate, and
+          entertain. Our collection includes a vast range of genres, from
+          fiction to non-fiction, science to history, and much more.
+        </p>
+      </section>
+
+      <section id="contact-us">
+        <h2>Contact Us</h2>
+        <p>
+          We’d love to hear from you! Whether you have a question, need help
+          finding a book, or want to suggest a new title for our collection,
+          feel free to get in touch.
+        </p>
+        <p><strong>Email:</strong> library@contact.com</p>
+        <p><strong>Phone:</strong> +1 234 567 8901</p>
+        <p>
+          <strong>Address:</strong> 123 Library Lane, Booktown, Readingville
+        </p>
+        <p><strong>Hours of Operation:</strong></p>
+        <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+        <p>Saturday: 10:00 AM - 4:00 PM</p>
+        <p>Sunday: Closed</p>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="js/about.js"></script>
+  </body>
+</html>

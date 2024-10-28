@@ -1,0 +1,314 @@
+/* General Page Background */
+body {
+  background-color: #1a1a1a; /* Dark background */
+  color: #e0e0e0; /* Light text color for readability */
+}
+
+/* Navbar */
+.navbar-custom {
+  background-color: #2c3e50; /* Darker shade for navbar */
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.navbar-brand img {
+  height: auto;
+  max-width: 100%;
+}
+
+.nav-link {
+  color: #a8ff60 !important; /* Light green for links */
+}
+
+.nav-link:hover {
+  color: #77dd77 !important; /* Brighter green on hover */
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #4caf50; /* Light green for primary buttons */
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #388e3c; /* Darker green on hover */
+}
+
+/* Content Container */
+.content-container {
+  border: 2px solid #333; /* Dark border */
+  border-radius: 10px;
+  background-color: #2b2b2b; /* Dark background for container */
+  padding: 20px;
+  max-width: 1100px;
+  margin: 50px auto;
+}
+
+.content-container h2 {
+  text-align: center;
+  color: #a8ff60; /* Light green for section headers */
+  margin-bottom: 20px;
+}
+
+/* Book Section */
+.book-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #a8ff60; /* Light green for book section title */
+}
+
+.card {
+  background-color: #333; /* Dark background for cards */
+  border: none;
+  text-align: center;
+}
+
+.card img {
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.card-body h5 {
+  font-size: 1.2rem;
+  color: #a8ff60; /* Light green for card titles */
+  margin: 10px 0;
+}
+
+.card-body p {
+  color: #bbb; /* Lighter text for descriptions */
+}
+
+/* Form Control */
+.form-control {
+  width: 250px;
+  background-color: #444; /* Darker input background */
+  color: #e0e0e0; /* Light text color */
+  border: 1px solid #555;
+}
+
+.form-select {
+  width: auto;
+  margin-right: 10px;
+  background-color: #444; /* Darker dropdown background */
+  color: #e0e0e0;
+  border: 1px solid #555;
+}
+
+/* Navbar Structure */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.navbar-collapse {
+  flex-grow: 1;
+  justify-content: flex-start;
+}
+
+.navbar-nav.mx-auto {
+  margin-left: 30px;
+}
+
+.navbar-nav.ms-3 {
+  margin-left: -40px;
+}
+
+/* Carousel */
+.carousel-inner {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 15px;
+}
+
+.carousel-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  min-width: 250px;
+  flex: 0 0 auto;
+  background-color: #333; /* Dark card background */
+  color: #e0e0e0;
+}
+
+.card .btn {
+  display: block;
+  margin: 0 auto;
+  width: 80px;
+  background-color: #4caf50; /* Light green button */
+  color: #fff;
+}
+
+.card .btn:hover {
+  background-color: #388e3c;
+}
+
+/* Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-control-prev {
+  left: 10px;
+}
+
+.carousel-control-next {
+  right: 10px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Customizing Menu Icon */
+.menu-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #a8ff60;
+  margin-left: 20px;
+}
+
+/* Footer (if needed) */
+footer {
+  background-color: #2c3e50;
+  color: #a8ff60;
+  text-align: center;
+  padding: 15px;
+}
+/* About Page - Dark Theme with Light Green Accents */
+
+/* General Background */
+body {
+  background-color: #1a1a1a; /* Dark background */
+  color: #d4d4d4; /* Light text color */
+}
+
+/* Carousel Section */
+.carousel-inner {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 15px;
+}
+
+.carousel-inner::-webkit-scrollbar {
+  display: none; /* Hide scrollbars */
+}
+
+/* Card Style */
+.card {
+  min-width: 200px;
+  flex: 0 0 auto;
+  text-align: center;
+  background-color: #2e2e2e; /* Darker card background */
+  color: #d4d4d4; /* Light text for cards */
+  border: 1px solid #4caf50; /* Light green border */
+  border-radius: 8px;
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.card .btn {
+  display: block;
+  margin: 10px auto;
+  width: 80%; /* Adjusted width */
+  background-color: #4caf50; /* Light green button */
+  color: #1a1a1a; /* Dark text on button */
+  border: none;
+}
+
+.card .btn:hover {
+  background-color: #66bb6a; /* Lighter green on hover */
+}
+
+/* Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(76, 175, 80, 0.8); /* Greenish background */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+  filter: invert(1); /* Make icons white */
+}
+
+/* Link Button Style */
+button.nav-link {
+  background: none;
+  color: #4caf50; /* Light green link color */
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 7px;
+}
+
+#display {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #2e2e2e; /* Darker container background */
+  color: #d4d4d4; /* Light text for container */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Darker shadow */
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #4caf50; /* Light green heading color */
+  margin-bottom: 15px;
+}
+
+p {
+  color: #b0b0b0; /* Lighter text for paragraphs */
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+strong {
+  color: #4caf50; /* Bold text with light green color */
+}

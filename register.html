@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Page</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <link rel="stylesheet" href="/forntend/css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="https://www.svgrepo.com/show/530642/folder.svg"
+            width="150"
+            alt="Library Logo"
+          />
+        </a>
+        <div class="navbar-collapse">
+          <form id="searchForm" class="search-form" onsubmit="search(event)">
+            <select
+              id="searchCategory"
+              class="form-select"
+              aria-label="Search category"
+            >
+              <option value="name">Name</option>
+              <option value="authors">Authors</option>
+              <option value="category">Category</option>
+              <option value="year_published">Year of publish</option>
+            </select>
+            <input
+              id="searchKeyword"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search books, authors..."
+              aria-label="Search"
+            />
+            <button id="search" class="btn btn-outline-dark" type="submit">
+              Search
+            </button>
+          </form>
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a id="myBooksLink" class="nav-link active" href="#">My Books</a>
+            </li>
+          </ul>
+        </div>
+        <ul class="navbar-nav ms-3">
+          <li class="nav-item">
+            <button id="login" href="login.html" class="nav-link">
+              Log In
+            </button>
+          </li>
+          <li class="nav-item">
+            <a id="signUp" class="btn btn-primary" href="register.html"
+              >Sign Up</a
+            >
+          </li>
+          <li class="nav-item">
+            <span
+              class="menu-icon"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+            >
+              &#9776;
+            </span>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a id="myBooksLink2" class="nav-link active text-white" href="#">My Books</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-white" href="admin.html">Admin</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-white" href="about.html">Contact Us</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+    <div id="display" class="content-container">
+      <div
+        style="
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          background-color: #e0f2e0;
+          border: 1px solid #a5d6a7;
+          border-radius: 10px;
+        "
+      >
+        <!-- Left Side: Personal Information -->
+        <div
+          style="
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+            background-color: #1b3e1e;
+            color: #a5d6a7;
+            border-right: 1px solid #a5d6a7;
+          "
+        >
+          <h1
+            style="
+              font-size: 24px;
+              font-weight: bold;
+              margin-bottom: 20px;
+              color: #a5d6a7;
+            "
+          >
+            Personal Information
+          </h1>
+
+          <!-- First Name Field -->
+          <div style="margin-bottom: 15px">
+            <label
+              for="first_name"
+              style="
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: #a5d6a7;
+              "
+              >First Name</label
+            >
+            <input
+              type="text"
+              id="first_name"
+              style="
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #a5d6a7;
+                border-radius: 5px;
+                background-color: #e0f2e0;
+                color: #1b3e1e;
+              "
+              required
+              placeholder="Enter your first name"
+            />
+          </div>
+
+          <!-- Last Name Field -->
+          <div style="margin-bottom: 15px">
+            <label
+              for="last_name"
+              style="
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: #a5d6a7;
+              "
+              >Last Name</label
+            >
+            <input
+              type="text"
+              id="last_name"
+              style="
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #a5d6a7;
+                border-radius: 5px;
+                background-color: #e0f2e0;
+                color: #1b3e1e;
+              "
+              required
+              placeholder="Enter your last name"
+            />
+          </div>
+
+          <!-- Gender Field -->
+          <div style="margin-bottom: 15px">
+            <label
+              for="gender"
+              style="
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: #a5d6a7;
+              "
+              >Gender</label
+            >
+            <select
+              id="gender"
+              style="
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #a5d6a7;
+                border-radius: 5px;
+                background-color: #e0f2e0;
+                color: #1b3e1e;
+              "
+            >
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <!-- Age Field -->
+          <div style="margin-bottom: 15px">
+            <label
+              for="age"
+              style="
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: #a5d6a7;
+              "
+              >Age</label
+            >
+            <input
+              type="number"
+              id="age"
+              style="
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #a5d6a7;
+                border-radius: 5px;
+                background-color: #e0f2e0;
+                color: #1b3e1e;
+              "
+              required
+              placeholder="Enter your age"
+            />
+          </div>
+
+          <!-- City Field -->
+          <div style="margin-bottom: 15px">
+            <label
+              for="city"
+              style="
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: #a5d6a7;
+              "
+              >City</label
+            >
+            <input
+              type="text"
+              id="city"
+              style="
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #a5d6a7;
+                border-radius: 5px;
+                background-color: #e0f2e0;
+                color: #1b3e1e;
+              "
+              required
+              placeholder="Enter your city"
+            />
+          </div>
+
+          <!-- Address Field -->
+          <div style="margin-bottom: 15px">
+            <label
+              for="address"
+              style="
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: #a5d6a7;
+              "
+              >Address</label
+            >
+            <input
+              type="text"
+              id="address"
+              style="
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #a5d6a7;
+                border-radius: 5px;
+                background-color: #e0f2e0;
+                color: #1b3e1e;
+              "
+              required
+              placeholder="Enter your address"
+            />
+          </div>
+
+          <!-- Phone Number Field -->
+          <div style="margin-bottom: 15px">
+            <label
+              for="phone_number"
+              style="
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: #a5d6a7;
+              "
+              >Phone Number</label
+            >
+            <input
+              type="tel"
+              id="phone_number"
+              style="
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #a5d6a7;
+                border-radius: 5px;
+                background-color: #e0f2e0;
+                color: #1b3e1e;
+              "
+              required
+              placeholder="Enter your phone number"
+            />
+          </div>
+        </div>
+
+        <!-- Right Side: Account Information -->
+        <div
+          style="
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+            background-color: #1b3e1e;
+            color: #a5d6a7;
+          "
+        >
+          <h1
+            style="
+              font-size: 24px;
+              font-weight: bold;
+              margin-bottom: 20px;
+              color: #a5d6a7;
+            "
+          >
+            Account Information
+          </h1>
+
+          <!-- Email Field -->
+          <div style="margin-bottom: 15px">
+            <label
+              for="email"
+              style="
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: #a5d6a7;
+              "
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              style="
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #a5d6a7;
+                border-radius: 5px;
+                background-color: #e0f2e0;
+                color: #1b3e1e;
+              "
+              required
+              placeholder="Enter your email"
+            />
+          </div>
+
+          <!-- Password Field -->
+          <div style="margin-bottom: 15px">
+            <label
+              for="password"
+              style="
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: #a5d6a7;
+              "
+              >Password</label
+            >
+            <div style="position: relative">
+              <input
+                type="password"
+                id="password"
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  border: 1px solid #a5d6a7;
+                  border-radius: 5px;
+                  background-color: #e0f2e0;
+                  color: #1b3e1e;
+                "
+                required
+                placeholder="Enter your password"
+              />
+              <button
+                type="button"
+                style="
+                  position: absolute;
+                  right: 10px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  border: none;
+                  background: none;
+                  color: #1b5e20;
+                "
+              >
+                <!-- Optional icon for visibility toggle -->
+              </button>
+            </div>
+          </div>
+
+          <!-- Newsletter Checkbox -->
+          <div
+            style="
+              margin-bottom: 15px;
+              display: flex;
+              align-items: center;
+              color: #a5d6a7;
+            "
+          >
+            <input type="checkbox" id="newsletter" style="margin-right: 10px" />
+            <label for="newsletter" style="margin: 0"
+              >I want to receive news and resources from the Internet
+              Archive.</label
+            >
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            onclick="register()"
+            type="submit"
+            style="
+              width: 100%;
+              padding: 15px;
+              background-color: #2e7d32;
+              color: #e0f2e0;
+              border: none;
+              border-radius: 5px;
+              font-size: 16px;
+            "
+          >
+            Sign Up with Email
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="js/register.js"></script>
+</html>
