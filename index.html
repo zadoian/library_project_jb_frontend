@@ -35,7 +35,7 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/toastify-js"
     ></script>
-    <link rel="stylesheet" href="/forntend/css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
@@ -99,25 +99,37 @@
     </nav>
 
     <!-- Offcanvas Menu -->
-    <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div
+      class="offcanvas offcanvas-end bg-dark text-white"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
       <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="offcanvas-body">
-          <ul class="navbar-nav">
-              <li class="nav-item">
-                  <a id="myBooksLink2" class="nav-link active text-white" href="#">My Books</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link text-white" href="admin.html">Admin</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link text-white" href="about.html">Contact Us</a>
-              </li>
-          </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a id="myBooksLink2" class="nav-link active text-white" href="#"
+              >My Books</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="admin.html">Admin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="about.html">About</a>
+          </li>
+        </ul>
       </div>
-  </div>
+    </div>
 
     <div id="display" class="content-container"></div>
   </body>
